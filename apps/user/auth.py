@@ -17,14 +17,14 @@ def generate_tokens(user_id):
     # 设置 access_token 过期时间为 1 秒
     access_token_payload = {
         "user_id": user_id,
-        "exp": datetime.datetime.now(datetime.UTC) + datetime.timedelta(days=os.getenv("JWT_EXPIRATION_DAYS", 1)),
+        "exp": datetime.datetime.now(datetime.UTC) + datetime.timedelta(days=int(os.getenv("JWT_EXPIRATION_DAYS", 1))),
     }
     access_token = jwt.encode(access_token_payload, SECRET_KEY, algorithm="HS256")
 
     # 设置 refresh_token 过期时间为 20 天
     refresh_token_payload = {
         "user_id": user_id,
-        "exp": datetime.datetime.now(datetime.UTC) + datetime.timedelta(days=os.getenv("JWT_REFRESH_EXPIRATION_DAYS", 20)),
+        "exp": datetime.datetime.now(datetime.UTC) + datetime.timedelta(days=int(os.getenv("JWT_REFRESH_EXPIRATION_DAYS", 20))),
     }
     refresh_token = jwt.encode(refresh_token_payload, SECRET_KEY, algorithm="HS256")
 
@@ -60,14 +60,15 @@ def refresh_access_token(refresh_token):
         # 生成新的 access_token
         access_token_payload = {
             "user_id": user_id,
-            "exp": datetime.datetime.now(datetime.UTC) + datetime.timedelta(days=os.getenv("JWT_EXPIRATION_DAYS", 1)),
+            "exp": datetime.datetime.now(datetime.UTC) + datetime.timedelta(days=int(os.getenv("JWT_EXPIRATION_DAYS", 1))),
         }
         new_access_token = jwt.encode(access_token_payload, SECRET_KEY, algorithm="HS256")
 
         # 生成新的 refresh_token
         refresh_token_payload = {
             "user_id": user_id,
-            "exp": datetime.datetime.now(datetime.UTC) + datetime.timedelta(days=os.getenv("JWT_REFRESH_EXPIRATION_DAYS", 20)),
+            "exp": datetime.datetime.now(datetime.UTC)
+            + datetime.timedelta(days=int(os.getenv("JWT_REFRESH_EXPIRATION_DAYS", 20))),
         }
         new_refresh_token = jwt.encode(refresh_token_payload, SECRET_KEY, algorithm="HS256")
 
