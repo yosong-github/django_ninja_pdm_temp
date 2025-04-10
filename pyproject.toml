@@ -32,11 +32,8 @@ select = [
 line-length = 130
 exclude = ["migrations"]
 
-[tool.mypy]
-exclude = 'migrations'
-
-
+#
 [[tool.mypy.overrides]]
-module = "apps.user.*"
+module = "apps.*.migrations.*"
 follow_imports = "skip"
 ignore_errors = true
