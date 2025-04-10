@@ -5,7 +5,7 @@
 groups = ["default", "dev"]
 strategy = ["inherit_metadata"]
 lock_version = "4.5.0"
-content_hash = "sha256:d7bd4421ee637416e66e3b5c750c9f17370b8a3128e5efcc0a4038970b5cb931"
+content_hash = "sha256:0409b60ee515649853e4cdd8185d50e29ad198e888879f611ec3ebb6a7627cb5"
 
 [[metadata.targets]]
 requires_python = "==3.12.*"
@@ -39,31 +39,6 @@ files = [
 ]
 
 [[package]]
-name = "cffi"
-version = "1.17.1"
-requires_python = ">=3.8"
-summary = "Foreign Function Interface for Python calling C code."
-groups = ["default"]
-marker = "platform_python_implementation != \"PyPy\""
-dependencies = [
-    "pycparser",
-]
-files = [
-    {file = "cffi-1.17.1-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:805b4371bf7197c329fcb3ead37e710d1bca9da5d583f5073b799d5c5bd1eee4"},
-    {file = "cffi-1.17.1-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:733e99bc2df47476e3848417c5a4540522f234dfd4ef3ab7fafdf555b082ec0c"},
-    {file = "cffi-1.17.1-cp312-cp312-manylinux_2_12_i686.manylinux2010_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:1257bdabf294dceb59f5e70c64a3e2f462c30c7ad68092d01bbbfb1c16b1ba36"},
-    {file = "cffi-1.17.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:da95af8214998d77a98cc14e3a3bd00aa191526343078b530ceb0bd710fb48a5"},
-    {file = "cffi-1.17.1-cp312-cp312-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:d63afe322132c194cf832bfec0dc69a99fb9bb6bbd550f161a49e9e855cc78ff"},
-    {file = "cffi-1.17.1-cp312-cp312-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:f79fc4fc25f1c8698ff97788206bb3c2598949bfe0fef03d299eb1b5356ada99"},
-    {file = "cffi-1.17.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:b62ce867176a75d03a665bad002af8e6d54644fad99a3c70905c543130e39d93"},
-    {file = "cffi-1.17.1-cp312-cp312-musllinux_1_1_aarch64.whl", hash = "sha256:386c8bf53c502fff58903061338ce4f4950cbdcb23e2902d86c0f722b786bbe3"},
-    {file = "cffi-1.17.1-cp312-cp312-musllinux_1_1_x86_64.whl", hash = "sha256:4ceb10419a9adf4460ea14cfd6bc43d08701f0835e979bf821052f1805850fe8"},
-    {file = "cffi-1.17.1-cp312-cp312-win32.whl", hash = "sha256:a08d7e755f8ed21095a310a693525137cfe756ce62d066e53f502a83dc550f65"},
-    {file = "cffi-1.17.1-cp312-cp312-win_amd64.whl", hash = "sha256:51392eae71afec0d0c8fb1a53b204dbb3bcabcb3c9b807eedf3e1e6ccf2de903"},
-    {file = "cffi-1.17.1.tar.gz", hash = "sha256:1c39c6016c32bc48dd54561950ebd6836e1670f2ae46128f67cf49e789c52824"},
-]
-
-[[package]]
 name = "cfgv"
 version = "3.4.0"
 requires_python = ">=3.8"
@@ -72,54 +47,6 @@ groups = ["dev"]
 files = [
     {file = "cfgv-3.4.0-py2.py3-none-any.whl", hash = "sha256:b7265b1f29fd3316bfcd2b330d63d024f2bfd8bcb8b0272f8e19a504856c48f9"},
     {file = "cfgv-3.4.0.tar.gz", hash = "sha256:e52591d4c5f5dead8e0f673fb16db7949d2cfb3f7da4582893288f0ded8fe560"},
-]
-
-[[package]]
-name = "contextlib2"
-version = "21.6.0"
-requires_python = ">=3.6"
-summary = "Backports and enhancements for the contextlib module"
-groups = ["default"]
-files = [
-    {file = "contextlib2-21.6.0-py2.py3-none-any.whl", hash = "sha256:3fbdb64466afd23abaf6c977627b75b6139a5a3e8ce38405c5b413aed7a0471f"},
-    {file = "contextlib2-21.6.0.tar.gz", hash = "sha256:ab1e2bfe1d01d968e1b7e8d9023bc51ef3509bba217bb730cee3827e1ee82869"},
-]
-
-[[package]]
-name = "cryptography"
-version = "44.0.2"
-requires_python = "!=3.9.0,!=3.9.1,>=3.7"
-summary = "cryptography is a package which provides cryptographic recipes and primitives to Python developers."
-groups = ["default"]
-dependencies = [
-    "cffi>=1.12; platform_python_implementation != \"PyPy\"",
-]
-files = [
-    {file = "cryptography-44.0.2-cp37-abi3-macosx_10_9_universal2.whl", hash = "sha256:efcfe97d1b3c79e486554efddeb8f6f53a4cdd4cf6086642784fa31fc384e1d7"},
-    {file = "cryptography-44.0.2-cp37-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:29ecec49f3ba3f3849362854b7253a9f59799e3763b0c9d0826259a88efa02f1"},
-    {file = "cryptography-44.0.2-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:bc821e161ae88bfe8088d11bb39caf2916562e0a2dc7b6d56714a48b784ef0bb"},
-    {file = "cryptography-44.0.2-cp37-abi3-manylinux_2_28_aarch64.whl", hash = "sha256:3c00b6b757b32ce0f62c574b78b939afab9eecaf597c4d624caca4f9e71e7843"},
-    {file = "cryptography-44.0.2-cp37-abi3-manylinux_2_28_armv7l.manylinux_2_31_armv7l.whl", hash = "sha256:7bdcd82189759aba3816d1f729ce42ffded1ac304c151d0a8e89b9996ab863d5"},
-    {file = "cryptography-44.0.2-cp37-abi3-manylinux_2_28_x86_64.whl", hash = "sha256:4973da6ca3db4405c54cd0b26d328be54c7747e89e284fcff166132eb7bccc9c"},
-    {file = "cryptography-44.0.2-cp37-abi3-manylinux_2_34_aarch64.whl", hash = "sha256:4e389622b6927d8133f314949a9812972711a111d577a5d1f4bee5e58736b80a"},
-    {file = "cryptography-44.0.2-cp37-abi3-manylinux_2_34_x86_64.whl", hash = "sha256:f514ef4cd14bb6fb484b4a60203e912cfcb64f2ab139e88c2274511514bf7308"},
-    {file = "cryptography-44.0.2-cp37-abi3-musllinux_1_2_aarch64.whl", hash = "sha256:1bc312dfb7a6e5d66082c87c34c8a62176e684b6fe3d90fcfe1568de675e6688"},
-    {file = "cryptography-44.0.2-cp37-abi3-musllinux_1_2_x86_64.whl", hash = "sha256:3b721b8b4d948b218c88cb8c45a01793483821e709afe5f622861fc6182b20a7"},
-    {file = "cryptography-44.0.2-cp37-abi3-win32.whl", hash = "sha256:51e4de3af4ec3899d6d178a8c005226491c27c4ba84101bfb59c901e10ca9f79"},
-    {file = "cryptography-44.0.2-cp37-abi3-win_amd64.whl", hash = "sha256:c505d61b6176aaf982c5717ce04e87da5abc9a36a5b39ac03905c4aafe8de7aa"},
-    {file = "cryptography-44.0.2-cp39-abi3-macosx_10_9_universal2.whl", hash = "sha256:8e0ddd63e6bf1161800592c71ac794d3fb8001f2caebe0966e77c5234fa9efc3"},
-    {file = "cryptography-44.0.2-cp39-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:81276f0ea79a208d961c433a947029e1a15948966658cf6710bbabb60fcc2639"},
-    {file = "cryptography-44.0.2-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:9a1e657c0f4ea2a23304ee3f964db058c9e9e635cc7019c4aa21c330755ef6fd"},
-    {file = "cryptography-44.0.2-cp39-abi3-manylinux_2_28_aarch64.whl", hash = "sha256:6210c05941994290f3f7f175a4a57dbbb2afd9273657614c506d5976db061181"},
-    {file = "cryptography-44.0.2-cp39-abi3-manylinux_2_28_armv7l.manylinux_2_31_armv7l.whl", hash = "sha256:d1c3572526997b36f245a96a2b1713bf79ce99b271bbcf084beb6b9b075f29ea"},
-    {file = "cryptography-44.0.2-cp39-abi3-manylinux_2_28_x86_64.whl", hash = "sha256:b042d2a275c8cee83a4b7ae30c45a15e6a4baa65a179a0ec2d78ebb90e4f6699"},
-    {file = "cryptography-44.0.2-cp39-abi3-manylinux_2_34_aarch64.whl", hash = "sha256:d03806036b4f89e3b13b6218fefea8d5312e450935b1a2d55f0524e2ed7c59d9"},
-    {file = "cryptography-44.0.2-cp39-abi3-manylinux_2_34_x86_64.whl", hash = "sha256:c7362add18b416b69d58c910caa217f980c5ef39b23a38a0880dfd87bdf8cd23"},
-    {file = "cryptography-44.0.2-cp39-abi3-musllinux_1_2_aarch64.whl", hash = "sha256:8cadc6e3b5a1f144a039ea08a0bdb03a2a92e19c46be3285123d32029f40a922"},
-    {file = "cryptography-44.0.2-cp39-abi3-musllinux_1_2_x86_64.whl", hash = "sha256:6f101b1f780f7fc613d040ca4bdf835c6ef3b00e9bd7125a4255ec574c7916e4"},
-    {file = "cryptography-44.0.2-cp39-abi3-win32.whl", hash = "sha256:3dc62975e31617badc19a906481deacdeb80b4bb454394b4098e3f2525a488c5"},
-    {file = "cryptography-44.0.2-cp39-abi3-win_amd64.whl", hash = "sha256:5f6f90b72d8ccadb9c6e311c775c8305381db88374c65fa1a68250aa8a9cb3a6"},
-    {file = "cryptography-44.0.2.tar.gz", hash = "sha256:c63454aa261a0cf0c5b4718349629793e9e634993538db841165b3df74f37ec0"},
 ]
 
 [[package]]
@@ -134,18 +61,19 @@ files = [
 
 [[package]]
 name = "django"
-version = "5.2"
-requires_python = ">=3.10"
+version = "4.2"
+requires_python = ">=3.8"
 summary = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
 groups = ["default"]
 dependencies = [
-    "asgiref>=3.8.1",
+    "asgiref<4,>=3.6.0",
+    "backports-zoneinfo; python_version < \"3.9\"",
     "sqlparse>=0.3.1",
     "tzdata; sys_platform == \"win32\"",
 ]
 files = [
-    {file = "Django-5.2-py3-none-any.whl", hash = "sha256:91ceed4e3a6db5aedced65e3c8f963118ea9ba753fc620831c77074e620e7d83"},
-    {file = "Django-5.2.tar.gz", hash = "sha256:1a47f7a7a3d43ce64570d350e008d2949abe8c7e21737b351b6a1611277c6d89"},
+    {file = "Django-4.2-py3-none-any.whl", hash = "sha256:ad33ed68db9398f5dfb33282704925bce044bef4261cd4fb59e4e7f9ae505a78"},
+    {file = "Django-4.2.tar.gz", hash = "sha256:c36e2ab12824e2ac36afa8b2515a70c53c7742f0d6eaefa7311ec379558db997"},
 ]
 
 [[package]]
@@ -164,38 +92,18 @@ files = [
 ]
 
 [[package]]
-name = "django-ninja-extra"
-version = "0.18.4"
+name = "django-redis"
+version = "5.4.0"
 requires_python = ">=3.6"
-summary = "Django Ninja Extra - Class Based Utility and more for Django Ninja(Fast Django REST framework)"
+summary = "Full featured redis cache backend for Django."
 groups = ["default"]
 dependencies = [
-    "Django>=2.2",
-    "asgiref",
-    "contextlib2",
-    "django-ninja>=0.17.0",
-    "injector>=0.19.0",
+    "Django>=3.2",
+    "redis!=4.0.0,!=4.0.1,>=3",
 ]
 files = [
-    {file = "django-ninja-extra-0.18.4.tar.gz", hash = "sha256:60aca86e903d3706d99c531cec637a9ccbf4bde7019588c98bc87816272327a2"},
-    {file = "django_ninja_extra-0.18.4-py3-none-any.whl", hash = "sha256:95104fadef3ccf84d240b507e94c71f216cfef18f3e09f67382a49173c86fb00"},
-]
-
-[[package]]
-name = "django-ninja-jwt"
-version = "5.2.7"
-requires_python = ">=3.7"
-summary = "Django Ninja JWT - JSON Web Token for Django-Ninja"
-groups = ["default"]
-dependencies = [
-    "Django>=2.1",
-    "django-ninja-extra>=0.14.2",
-    "pyjwt<3,>=1.7.1",
-    "pyjwt[crypto]",
-]
-files = [
-    {file = "django_ninja_jwt-5.2.7-py3-none-any.whl", hash = "sha256:0516f51c7435f83fe12e29025b4c4b3fbc59f6c25592b9c5876811a06e340ca0"},
-    {file = "django_ninja_jwt-5.2.7.tar.gz", hash = "sha256:e80d3d1b54363b97cf8c1fea02ae1d0a90ec5604bd0288acf90c97c3d38d2694"},
+    {file = "django-redis-5.4.0.tar.gz", hash = "sha256:6a02abaa34b0fea8bf9b707d2c363ab6adc7409950b2db93602e6cb292818c42"},
+    {file = "django_redis-5.4.0-py3-none-any.whl", hash = "sha256:ebc88df7da810732e2af9987f7f426c96204bf89319df4c6da6ca9a2942edd5b"},
 ]
 
 [[package]]
@@ -218,19 +126,6 @@ groups = ["dev"]
 files = [
     {file = "identify-2.6.9-py2.py3-none-any.whl", hash = "sha256:c98b4322da415a8e5a70ff6e51fbc2d2932c015532d77e9f8537b4ba7813b150"},
     {file = "identify-2.6.9.tar.gz", hash = "sha256:d40dfe3142a1421d8518e3d3985ef5ac42890683e32306ad614a29490abeb6bf"},
-]
-
-[[package]]
-name = "injector"
-version = "0.22.0"
-summary = "Injector - Python dependency injection framework, inspired by Guice"
-groups = ["default"]
-dependencies = [
-    "typing-extensions>=3.7.4; python_version < \"3.9\"",
-]
-files = [
-    {file = "injector-0.22.0-py2.py3-none-any.whl", hash = "sha256:74379ccef3b893bc7d0b7d504c255b5160c5a55e97dc7bdcc73cb33cc7dce3a1"},
-    {file = "injector-0.22.0.tar.gz", hash = "sha256:79b2d4a0874c75d3aa735f11c5b32b89d9542711ca07071161882c5e9cc15ed6"},
 ]
 
 [[package]]
@@ -271,18 +166,6 @@ dependencies = [
 files = [
     {file = "pre_commit-4.2.0-py2.py3-none-any.whl", hash = "sha256:a009ca7205f1eb497d10b845e52c838a98b6cdd2102a6c8e4540e94ee75c58bd"},
     {file = "pre_commit-4.2.0.tar.gz", hash = "sha256:601283b9757afd87d40c4c4a9b2b5de9637a8ea02eaff7adc2d0fb4e04841146"},
-]
-
-[[package]]
-name = "pycparser"
-version = "2.22"
-requires_python = ">=3.8"
-summary = "C parser in Python"
-groups = ["default"]
-marker = "platform_python_implementation != \"PyPy\""
-files = [
-    {file = "pycparser-2.22-py3-none-any.whl", hash = "sha256:c3702b6d3dd8c7abc1afa565d7e63d53a1d0bd86cdc24edd75470f4de499cfcc"},
-    {file = "pycparser-2.22.tar.gz", hash = "sha256:491c8be9c040f5390f5bf44a5b07752bd07f56edf992381b05c701439eec10f6"},
 ]
 
 [[package]]
@@ -341,22 +224,6 @@ files = [
 ]
 
 [[package]]
-name = "pyjwt"
-version = "2.10.1"
-extras = ["crypto"]
-requires_python = ">=3.9"
-summary = "JSON Web Token implementation in Python"
-groups = ["default"]
-dependencies = [
-    "cryptography>=3.4.0",
-    "pyjwt==2.10.1",
-]
-files = [
-    {file = "PyJWT-2.10.1-py3-none-any.whl", hash = "sha256:dcdd193e30abefd5debf142f9adfcdd2b58004e644f25406ffaebd50bd98dacb"},
-    {file = "pyjwt-2.10.1.tar.gz", hash = "sha256:3cc5772eb20009233caf06e9d8a0577824723b44e6648ee0a2aedb6cf9381953"},
-]
-
-[[package]]
 name = "python-dotenv"
 version = "1.1.0"
 requires_python = ">=3.9"
@@ -384,6 +251,20 @@ files = [
     {file = "PyYAML-6.0.2-cp312-cp312-win32.whl", hash = "sha256:ef6107725bd54b262d6dedcc2af448a266975032bc85ef0172c5f059da6325b4"},
     {file = "PyYAML-6.0.2-cp312-cp312-win_amd64.whl", hash = "sha256:7e7401d0de89a9a855c839bc697c079a4af81cf878373abd7dc625847d25cbd8"},
     {file = "pyyaml-6.0.2.tar.gz", hash = "sha256:d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"},
+]
+
+[[package]]
+name = "redis"
+version = "5.2.1"
+requires_python = ">=3.8"
+summary = "Python client for Redis database and key-value store"
+groups = ["default"]
+dependencies = [
+    "async-timeout>=4.0.3; python_full_version < \"3.11.3\"",
+]
+files = [
+    {file = "redis-5.2.1-py3-none-any.whl", hash = "sha256:ee7e1056b9aea0f04c6c2ed59452947f34c4940ee025f5dd83e6a6418b6989e4"},
+    {file = "redis-5.2.1.tar.gz", hash = "sha256:16f2e22dff21d5125e8481515e386711a34cbec50f0e44413dd7d9c060a54e0f"},
 ]
 
 [[package]]
