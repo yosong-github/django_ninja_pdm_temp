@@ -2,6 +2,7 @@ from django.forms.models import model_to_dict
 from ninja import Router
 from pydantic import BaseModel
 
+from utils.api.error import UserAuthFailed
 from utils.api.response import DataDictResponse, DataListResponse
 
 from .auth import generate_tokens
@@ -19,17 +20,17 @@ class LoginRequest(BaseModel):
         json_schema_extra = {"example": {"username": "yosong", "password": "158598"}}
 
 
+
 @router.post(
     "login",
     summary="用户登录",
     description="用户登录",
-    auth=None,
-    response=DataDictResponse,
+    auth=None
 )
 def login(request, login_data: LoginRequest):
     user = SysUser.objects.filter(username=login_data.username, password=login_data.password).first()
     if not user:
-        return DataDictResponse(data={"msg": "用户名或密码错误"})
+        raise UserAuthFailed()
     # 通过用户ID生成token
     access_token, refresh_token = generate_tokens(user.id)
     print(access_token, refresh_token)

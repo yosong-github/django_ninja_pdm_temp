@@ -21,12 +21,14 @@ from ninja.security import HttpBearer
 from apps.user.apis import router as user_router
 from apps.user.auth import verify_token
 
+from utils.api.error import ApplicationError
+from ninja.errors import ValidationError
+
+
 
 class GlobalAuth(HttpBearer):
     # 定义登录
     def authenticate(self, request, token):
-        print(token)
-        print()
         user_id = verify_token(token)
         print(user_id)
         if user_id:
@@ -36,5 +38,36 @@ class GlobalAuth(HttpBearer):
 api = NinjaAPI(csrf=False, auth=GlobalAuth())
 
 api.add_router("user", user_router, tags=["用户"])
+
+
+
+# 自定义服务器错误（应用程序未处理的任何其他异常。 默认行为）
+@api.exception_handler(Exception)
+def validation_errors(request, exc):
+    print(exc)
+    return api.create_response(
+        request,
+        {"code": 500, "message": "服务器发生错误,请稍后再试或联系相关人员"},
+        status=200,
+    )
+
+# 自定义验证错误（当请求数据未通过验证时抛出）
+@api.exception_handler(ValidationError)
+def validation_errors(request, exc):
+    print(exc)
+    return api.create_response(
+        request,
+        {"code": 422, "message": "参数错误：" + str(exc)},
+        status=200,
+    )
+
+# 自定义自定义错误（逻辑错误，有开发者抛出的错误）
+@api.exception_handler(ApplicationError)
+def validation_errors(request, exc: ApplicationError):
+    return api.create_response(
+        request,
+        {"code": exc.code, "message": exc.message},
+        status=200,
+    )
 
 urlpatterns = [path("api/", api.urls)]
