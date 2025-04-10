@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "ninja",
     "apps.user.apps.UserConfig",
+    "apps.test_mypy.apps.TestMypyConfig",
 ]
 
 MIDDLEWARE = [
