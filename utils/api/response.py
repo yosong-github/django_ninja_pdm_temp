@@ -61,15 +61,16 @@ class DataListResponse(ResponseModel):
     data: list = Field(None)
 
 
-class PageList(BaseModel):
-    page: int
-    page_size: int
-    total_pages: int = 1
-    amount: int = 0
-    data: list = Field(None)
+# class PageList(BaseModel):
+#     page: int
+#     page_size: int
+#     total_pages: int = 1
+#     total: int = 0
+#     data: list = Field(None)
+#
 
 
 class PageListResponse(ResponseModel):
     code: ResponseStatus = ResponseStatus.SUCCESS
     message: str = _("操作成功")
-    data: PageList = Field(None)
+    data: dict = Field(None)

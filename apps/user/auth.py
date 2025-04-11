@@ -4,11 +4,13 @@ from time import sleep
 
 import jwt
 
+from utils.api.error import InvalidAuthentication, UserTokenWasExpired
+
 # 密钥，用于签名和验证 JWT
 SECRET_KEY = os.getenv("JWT_SECRET_KEY", "secret")
 
 
-def generate_tokens(user_id):
+def generate_tokens(user_id: str | int) -> tuple[str, str]:
     """
     生成 access_token 和 refresh_token
     :param user_id: 用户ID
@@ -31,7 +33,7 @@ def generate_tokens(user_id):
     return access_token, refresh_token
 
 
-def verify_token(token):
+def verify_token(token: str):
     """
     验证 token 是否有效
     :param token: JWT token
@@ -41,14 +43,12 @@ def verify_token(token):
         payload = jwt.decode(token, SECRET_KEY, algorithms=["HS256"])
         return payload
     except jwt.ExpiredSignatureError:
-        print("Token 已过期")
-        return None
+        raise UserTokenWasExpired()
     except jwt.InvalidTokenError:
-        print("无效的 Token")
-        return None
+        raise InvalidAuthentication()
 
 
-def refresh_access_token(refresh_token):
+def refresh_access_token(refresh_token: str):
     """
     使用 refresh_token 刷新 access_token 和 refresh_token
     :param refresh_token: 刷新 token
