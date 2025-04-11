@@ -16,7 +16,7 @@ distribution = false
 
 
 [tool.pdm.scripts]
-pre_install = 'pre-commit install'
+post_install= 'pre-commit install'
 dev = 'python manage.py runserver'
 
 [dependency-groups]
